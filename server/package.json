@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "signaling server for webrtc",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index",
+    "compile": "./node_modules/.bin/tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.0.2",
+    "websocket": "^1.0.32"
+  },
+  "devDependencies": {
+    "@types/websocket": "^1.0.1"
+  }
+}

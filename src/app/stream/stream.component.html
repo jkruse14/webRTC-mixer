@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Active Stream</h3>
+    <figure class="activeStreamContainer card-img-top">
+      <video #activeStream [muted]="true" autoplay playsinline controls></video>
+    </figure>
+  </div>
+</div>
+<div *ngIf="type === 'mixer'">
+  <div #feedsGrid class='feedsGrid'>
+    <div *ngFor="let key of uniqueStreamIds; let idx = index;" [attr.data-index]="idx" class="videoFeed">
+      <video #video [muted]="true" autoplay playsinline controls [attr.id]="key" class="card-img-top"></video>
+      <div class="card-body">
+        <h4 class="card-title"> TODO </h4>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-primary active" (click)="setActiveStream(key)">Set Active</label>
+          <label class="btn btn-primary active" (click)="deactivateStream()">Deactivate</label>
+        </div>
+      </div>
+    <!-- <app-device-table></app-device-table> -->
+    </div>
+  </div>
+</div>

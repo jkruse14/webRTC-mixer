@@ -1,0 +1,10 @@
+<div>
+  <table>
+    <th>Device ID</th><th>Device Kind</th><th>Device Label</th><th>Device Group ID</th>
+    <tr *ngFor="let device of devices">
+      <td>{{device.label}}</td>
+      <td>{{device.kind}}</td>
+      <td>{{device.deviceId}}</td>
+      <td>{{device.groupId}}</td></tr>
+  </table>
+</div>

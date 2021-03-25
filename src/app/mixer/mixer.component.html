@@ -1,0 +1,28 @@
+<span>{{ websocketService.getLocalWebSocketConnection()?.name || "Create a Connection" }}</span>
+
+<div id="setupFormContainer" class="container">
+  <form [formGroup]="setupForm" (submit)="createConnection(setupForm)" [hidden]="hideForm()">
+    <div class="form-group">
+        <select id="connectionOptions" formControlName="connectionOptions" class="form-control">
+          <option *ngFor="let opt of connectionOptions; let i = index" [selected]="opt.selected == true" [value]="connectionOptions[i].value" >{{ connectionOptions[i].name }}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="connectionName">Name</label>
+        <input type="text" class="form-control" id="connectionName" formControlName="connectionName"
+            placeholder="mat-1" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Next</button>
+  </form>
+</div>
+
+<app-connection-list
+    [connections]="websocketService.connectedDevices"
+    [webSocketService]="websocketService"
+  ></app-connection-list>
+  <app-stream
+    *ngIf="hideForm()"
+    [stream]="rtcService?.getActiveStream()"
+    [tracks]="rtcService.getActiveStream().getTracks()"
+    [type]="rtcService.getLocalWebSocketConnection()?.type"
+  ></app-stream>

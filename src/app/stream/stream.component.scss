@@ -1,0 +1,19 @@
+@use "bootstrap";
+
+.feedsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 20rem);
+}
+
+.videoFeed {
+  @extend .card;
+  height: auto;
+  max-width: 14rem;
+  width: 100%;
+}
+
+.activeStreamContainer {
+  height: auto;
+  max-width: 30rem;
+  width: 100%;
+}

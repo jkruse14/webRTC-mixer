@@ -1,0 +1,10 @@
+<app-connection-list
+    [connections]="webSocketService.connectedDevices"
+    [webSocketService]="webSocketService"
+    [type]="type"
+  ></app-connection-list>
+  <app-stream
+    [stream]="rtcService?.getActiveStream()"
+    [tracks]="rtcService.getActiveStream().getTracks()"
+    [type]="type"
+  ></app-stream>

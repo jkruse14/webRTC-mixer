@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@use './app//mixer//mixer.component.scss';
+@use './app/stream/stream.component.scss';
+@use './app/connection-list/connection-list.component.scss';
+@use './app/device-table/device-table.component.scss';
+@use './app/app.component.scss';

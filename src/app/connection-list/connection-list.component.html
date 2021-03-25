@@ -1,0 +1,17 @@
+<div>
+  <table>
+    <tr>
+      <th col-span=2 >Available Feeds</th>
+    </tr>
+    <tr *ngFor="let connection of filteredConnections">
+      <td *ngIf="connection.id !== webSocketService.getLocalWebSocketConnection().id">
+        <label>
+          {{ connection.name || connection.id }}
+        </label>
+      </td>
+      <td *ngIf="connection.id !== webSocketService.getLocalWebSocketConnection().id">
+        <label (click)="addToMixer(connection.id, connection.name)">Add to Mixer</label>
+      </td>
+    </tr>
+  </table>
+</div>
